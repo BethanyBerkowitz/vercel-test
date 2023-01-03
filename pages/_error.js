@@ -9,6 +9,8 @@ function Error({ statusCode }) {
   }
   
   Error.getInitialProps = ({ res, err }) => {
+    console.log(`res.statusCode was ${res && res.statusCode}`)
+    console.log(`err.statusCode was ${err && err.statusCode}`)
     const statusCode = res ? res.statusCode : err ? err.statusCode : 404
     return { statusCode }
   }
